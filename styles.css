@@ -1,0 +1,93 @@
+/* SolVerse — animated galaxy theme */
+:root{
+  --bg1: #071028;
+  --bg2: #1b0b3a;
+  --accent-a: #7b5cff;
+  --accent-b: #00e6b8;
+  --card: rgba(255,255,255,0.04);
+  --glass: rgba(255,255,255,0.03);
+  --text: #eaf4ff;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: linear-gradient(120deg,var(--bg1),var(--bg2));
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  overflow-x:hidden;
+}
+
+#canvas-wrap{position:fixed;inset:0;z-index:0;pointer-events:none}
+canvas#stars{width:100%;height:100%;display:block}
+.nebula{position:fixed;inset:0;background:radial-gradient(600px 300px at 20% 20%, rgba(123,92,255,0.08), transparent 10%), radial-gradient(500px 250px at 80% 70%, rgba(0,230,184,0.06), transparent 10%);mix-blend-mode:overlay;z-index:0;pointer-events:none;}
+
+/* layout */
+.container{max-width:1100px;margin:0 auto;padding:24px}
+.site-header{position:fixed;top:0;left:0;right:0;z-index:40;background:linear-gradient(180deg, rgba(10,10,20,0.6), rgba(10,10,20,0.25));backdrop-filter: blur(6px);border-bottom:1px solid rgba(255,255,255,0.03)}
+.header-inner{display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:12px}
+.logo{width:64px;height:64px;border-radius:10px;object-fit:cover;box-shadow:0 6px 24px rgba(0,0,0,0.6)}
+.brand-text h1{font-size:18px;letter-spacing:0.12em;margin:0}
+.tag{font-size:12px;color:rgba(234,244,255,0.75)}
+
+/* header actions */
+.header-actions{display:flex;align-items:center;gap:12px}
+.btn{display:inline-block;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:700;color:#08121a}
+.btn.cta{background:var(--accent-b);color:#001118}
+.socials{display:flex;gap:10px;align-items:center}
+.icon{width:20px;height:20px;display:inline-block;fill:var(--text)}
+
+/* main content */
+.content{position:relative;z-index:10;padding-top:120px;padding-bottom:80px}
+
+/* hero */
+.hero{padding:48px 0}
+.hero-grid{display:grid;grid-template-columns:1fr 360px;gap:32px;align-items:center}
+.hero-text h2{font-size:34px;margin-bottom:8px}
+.hero-text h2 span{background:linear-gradient(90deg,var(--accent-a),var(--accent-b));-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{color:rgba(234,244,255,0.85);margin-bottom:18px}
+.hero-ctas{display:flex;gap:12px;flex-wrap:wrap}
+.btn.primary{background:linear-gradient(90deg,var(--accent-a),var(--accent-b));color:#03121a;box-shadow:0 8px 30px rgba(123,92,255,0.12)}
+.btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--text)}
+
+/* hero art */
+.hero-art{text-align:center}
+.hero-logo{width:260px;border-radius:18px;box-shadow:0 20px 60px rgba(11,8,36,0.6)}
+
+/* sections */
+.section{padding:48px 0}
+.section.alt{background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent)}
+
+/* tokenomics */
+.token-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:16px;margin-top:20px}
+.stat.card{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 6px 30px rgba(11,8,36,0.5)}
+
+/* roadmap blocks */
+.roadmap-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-top:18px}
+.phase{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.03);box-shadow:0 12px 40px rgba(10,8,30,0.5)}
+.phase h4{margin-bottom:8px;color:var(--accent-a)}
+
+/* bottom CTAs */
+.bottom-section{text-align:center}
+.bottom-ctas{display:flex;gap:12px;justify-content:center;margin-top:18px;flex-wrap:wrap}
+.btn.glow{background:linear-gradient(90deg,var(--accent-b),var(--accent-a));color:#03121a;padding:12px 20px;border-radius:12px;box-shadow:0 12px 40px rgba(0,230,184,0.12)}
+.btn.glow.alt{background:linear-gradient(90deg,var(--accent-a),#6e4bff);color:#03121a}
+
+/* social links row */
+.social-row{display:flex;gap:12px;justify-content:center;margin-top:18px}
+.social-link{display:inline-flex;gap:8px;align-items:center;padding:8px 12px;border-radius:10px;background:var(--glass);text-decoration:none;color:var(--text)}
+.social-icon{width:28px;height:28px;border-radius:6px;object-fit:cover;}
+
+/* footer */
+.site-footer{padding:28px 0;border-top:1px solid rgba(255,255,255,0.03);margin-top:40px;text-align:center;color:rgba(234,244,255,0.7)}
+
+/* responsive */
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr;gap:20px}
+  .hero-logo{width:200px}
+  .header-inner{padding:12px}
+  .brand-text h1{font-size:16px}
+}
